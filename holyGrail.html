@@ -1,0 +1,53 @@
+<!--圣杯布局-->
+<!--三者都设置向左浮动。
+设置main宽度为100%，设置两侧栏的宽度。
+设置 负边距，sub设置负左边距为100%，extra设置负左边距为负的自身宽度。
+设置main的padding值给左右两个子面板留出空间。
+设置两个子面板为相对定位，sub的left值为负的sub宽度，extra的right值为负的extra宽度。
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>an example site</title>
+    <style>
+      .main {
+        float: left;
+        width: 100%;/*设置主区域是父元素的100%*/
+        background-color: black;
+      }
+      .sub {
+        float: left;
+        width: 190px;
+        margin-left: -100%;
+        /*相对定位且负左*/
+        position: relative;
+        left: -190px;
+        background-color: aqua;
+      }
+      .extra {
+        float: left;
+        width: 230px;
+        margin-left: -230px;
+        /*相对定位且右*/
+        position: relative;
+        right: -230px;
+        background-color: blueviolet;
+      }
+      #bd {
+        padding: 0 230px 0 190px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="bd">
+      <div class="main">哈哈哈</div>
+      <div class="sub">hehhe </div>
+      <div class="extra">水水</div>
+    </div>
+  </body>
+</html>

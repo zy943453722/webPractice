@@ -1,0 +1,45 @@
+<!--双飞翼布局-->
+<!--三者都设置向左浮动。
+设置main-wrap宽度为100%，设置两个侧栏的宽度。
+设置 负边距，sub设置负左边距为100%，extra设置负左边距为负的自身宽度。
+设置main的margin值给左右两个子面板留出空间。-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>an example site</title>
+    <style>
+        /*相当于main-wrap是整个宽度*/
+      .main-wrap {
+        float: left;
+        width: 100%;
+        background-color: red;
+      }
+      .sub {
+        float: left;
+        width: 190px;
+        margin-left: -100%;
+        background-color: blue;
+      }
+      .extra {
+        float: left;
+        width: 230px;
+        margin-left: -230px;
+        background-color: green;
+      }
+      .main {
+        margin: 0 230px 0 190px;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-wrap"><div class="main">我的</div></div>
+    <div class="sub">你的</div>
+    <div class="extra">他的</div>
+  </body>
+</html>
