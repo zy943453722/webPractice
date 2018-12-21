@@ -1,0 +1,109 @@
+body {
+    width: 70%;
+    background-color:white;
+    margin: auto;
+}
+.container {
+    display: grid;
+    grid-template-columns: 0.4fr repeat(2,0.3fr);
+    /*grid-auto-rows: minmax(100px,auto);也可以*/
+    grid-template-rows: repeat(6,auto);/*多个auto可以*/
+    grid-column-gap: 5px;/*这个相当于设置了间距*/
+    grid-row-gap: 5px;
+}
+.header {
+    grid-column: 1/4;
+    grid-row: 1/2;
+    background-color: blue;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.header img {
+    /*margin-right: auto;/*这个起作用也可以flex的space_between也可以*/
+    width: 100px;
+    height: 70px;
+    flex: 1;
+}
+.navigation {
+    flex: 2;
+}
+.navigation ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /*list-style-type: none;父级设置不起作用*/
+}
+.unique {
+    list-style-type: none;   
+}
+.link {
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10px;
+    color: brown;
+    text-shadow: 1px 1px 1px red; 
+}
+.header button {
+    /*margin-left: auto;*/
+    flex: 1;
+    width: 70px;
+    height: 50px;
+    color: green;
+    box-shadow: 1px 1px 1px greenyellow;
+    border-radius: 5px;
+}
+.Hero {
+    grid-area: 2/1/3/2;
+    background-color: yellow;
+    text-align: center;
+}
+.Hero img {
+    width: 200px;
+    height: 200px;
+}
+.main_content {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    background-color: blueviolet;
+}
+.extra_content {
+    grid-area: 4/2/5/4;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: cornflowerblue;
+}
+.sidebar {
+    grid-area: 3/1/5/2;
+    background-color: chartreuse;
+}
+.sider_right {
+    grid-area: 5/3/6/4;
+    background-color: darkolivegreen;
+}
+.related_images {
+    grid-area: 5/1/6/3;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    background-color: darkred;
+}
+footer {
+    grid-area: 6/1/7/4;
+    background-color: grey;
+}
+footer p {
+    position: relative;
+    left: 35%;/*必须是相对于总网页的这个比例,因此父元素只占70%的情况下要居中只能0.7*0.5*/
+    font-size: 10px;
+}
+.images {
+    width: 25%;
+    height: 70px;
+}
+
